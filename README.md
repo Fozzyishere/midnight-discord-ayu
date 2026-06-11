@@ -27,9 +27,10 @@ a dark, customizable discord theme.
 
 ### install through link
 
-add `https://refact0r.github.io/midnight-discord/build/midnight.css` to your theme import links. you will need to copy the theme variables to your quickcss in order to customize the theme.
+add one of these to your theme import links. you will need to copy the theme variables to your quickcss in order to customize the theme.
 
-`https://refact0r.github.io/midnight-discord/build/ayu.css` for the ayu dark palette.
+- midnight: `https://fozzyishere.github.io/midnight-discord-ayu/build/midnight.css`
+- ayu dark: `https://fozzyishere.github.io/midnight-discord-ayu/build/ayu.css`
 
 ## flavors
 
