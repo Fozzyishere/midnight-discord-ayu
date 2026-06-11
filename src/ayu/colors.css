@@ -1,0 +1,79 @@
+/*
+ * ayu dark palette overlay.
+ *
+ * This file is NOT part of build/midnight.css (the build scripts only pick up
+ * top-level src/*.css files). It gets appended after the combined midnight CSS
+ * to produce build/ayu.css, so it only needs to redefine the palette variables
+ * declared in src/colors.css — all structural rules and Discord variable
+ * mappings are inherited from the midnight build via the cascade.
+ *
+ * Palette reference: https://github.com/ayu-theme/ayu-colors (ayu dark)
+ *   editor fg  #bfbdb6   ui fg   #5a6378   base bg  #0d1017
+ *   accent     #e6b450   red     #f07178   green    #aad94c
+ *   blue       #59c2ff   yellow  #ffb454   purple   #d2a6ff
+ */
+
+:root {
+    /* text colors */
+    --text-0: var(--bg-4); /* text on colored elements */
+    --text-1: hsl(46, 14%, 92%); /* other normally white text */
+    --text-2: hsl(45, 8%, 79%); /* headings and important text */
+    --text-3: hsl(45, 7%, 72%); /* normal text (ayu editor fg #bfbdb6) */
+    --text-4: hsl(222, 14%, 45%); /* icon buttons and channels (ayu ui fg #5a6378) */
+    --text-5: hsl(222, 14%, 29%); /* muted channels/chats and timestamps */
+
+    /* background and dark colors */
+    --bg-1: hsl(220, 22%, 17%); /* dark buttons when clicked */
+    --bg-2: hsl(222, 21%, 13%); /* dark buttons (ayu ui line #1b1f29) */
+    --bg-3: hsl(223, 25%, 10%); /* spacing, secondary elements (ayu panel #141821) */
+    --bg-4: hsl(222, 28%, 7%); /* main background color (ayu base #0d1017) */
+    --hover: hsla(220, 18%, 40%, 0.1); /* channels and buttons when hovered */
+    --active: hsla(220, 18%, 40%, 0.2); /* channels and buttons when clicked or selected */
+    --active-2: hsla(220, 18%, 40%, 0.3); /* extra state for transparent buttons */
+    --message-hover: hsla(0, 0%, 0%, 0.1); /* messages when hovered */
+
+    /* accent colors (ayu accent gold #e6b450) */
+    --accent-1: hsl(40, 80%, 68%); /* links and other accent text */
+    --accent-2: hsl(40, 75%, 61%); /* small accent elements */
+    --accent-3: hsl(40, 67%, 54%); /* accent buttons */
+    --accent-4: hsl(40, 64%, 47%); /* accent buttons when hovered */
+    --accent-5: hsl(40, 64%, 40%); /* accent buttons when clicked */
+    --accent-new: var(--accent-2); /* stuff that's normally red like mute/deafen buttons */
+    --mention: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 90%) 40%, transparent); /* background of messages that mention you */
+    --mention-hover: linear-gradient(to right, color-mix(in hsl, var(--accent-2), transparent 95%) 40%, transparent); /* background of messages that mention you when hovered */
+
+    /* border colors */
+    --border-light: hsla(222, 25%, 45%, 0.1); /* light border color */
+    --border: hsla(222, 25%, 45%, 0.2); /* normal border color */
+
+    /* base colors (status indicators inherit these via colors.css) */
+    --red-1: hsl(357, 80%, 74%); /* ayu markup #f07178 */
+    --red-2: hsl(357, 80%, 69%);
+    --red-3: hsl(358, 66%, 62%); /* toward ayu error #d95757 */
+    --red-4: hsl(358, 60%, 55%);
+    --red-5: hsl(358, 58%, 48%);
+
+    --green-1: hsl(80, 68%, 63%); /* ayu string #aad94c */
+    --green-2: hsl(80, 64%, 57%);
+    --green-3: hsl(80, 58%, 50%);
+    --green-4: hsl(80, 58%, 44%);
+    --green-5: hsl(80, 58%, 38%);
+
+    --blue-1: hsl(202, 100%, 73%); /* ayu entity #59c2ff */
+    --blue-2: hsl(202, 100%, 67%);
+    --blue-3: hsl(203, 85%, 60%);
+    --blue-4: hsl(204, 75%, 53%);
+    --blue-5: hsl(205, 75%, 46%);
+
+    --yellow-1: hsl(34, 100%, 72%); /* ayu func #ffb454 */
+    --yellow-2: hsl(34, 100%, 66%);
+    --yellow-3: hsl(35, 85%, 59%);
+    --yellow-4: hsl(35, 75%, 52%);
+    --yellow-5: hsl(35, 75%, 45%);
+
+    --purple-1: hsl(269, 100%, 87%); /* ayu constant #d2a6ff */
+    --purple-2: hsl(269, 100%, 83%);
+    --purple-3: hsl(269, 80%, 75%);
+    --purple-4: hsl(269, 65%, 67%);
+    --purple-5: hsl(269, 55%, 59%);
+}

@@ -13,6 +13,9 @@ a dark, customizable discord theme.
 
 # This fork added the ayu color scheme for personal usage
 
+- the ayu dark palette ([ayu-theme/ayu-colors](https://github.com/ayu-theme/ayu-colors)) lives in `src/ayu/colors.css`. it is appended after the midnight build to produce `build/ayu.css`, so upstream `src/*.css` files stay untouched and pulling from [refact0r/midnight-discord](https://github.com/refact0r/midnight-discord) won't cause merge conflicts.
+- `npm run build` (or `npm run dev` / `npm run serve`) builds both `build/midnight.css` and `build/ayu.css`. a github action also rebuilds both on every push that touches `src/` or `scripts/`.
+
 
 ## install
 
@@ -25,6 +28,8 @@ a dark, customizable discord theme.
 ### install through link
 
 add `https://refact0r.github.io/midnight-discord/build/midnight.css` to your theme import links. you will need to copy the theme variables to your quickcss in order to customize the theme.
+
+`https://refact0r.github.io/midnight-discord/build/ayu.css` for the ayu dark palette.
 
 ## flavors
 

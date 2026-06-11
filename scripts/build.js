@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const config = require('./theme.config');
+const { buildAyuFrom } = require('./ayu');
 
 const root = path.join(__dirname, '..');
 const baseFile = path.join(root, config.baseFile);
@@ -27,6 +28,7 @@ function buildSource() {
         .join('');
     fs.mkdirSync(path.dirname(buildFile), { recursive: true });
     fs.writeFileSync(buildFile, combined);
+    buildAyuFrom(combined);
     return combined;
 }
 
