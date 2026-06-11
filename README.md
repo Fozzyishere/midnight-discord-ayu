@@ -10,6 +10,10 @@ a dark, customizable discord theme.
 
 <img width=800 src="https://github.com/refact0r/midnight-discord/raw/master/assets/screenshot3.png">
 
+
+# This fork added the ayu color scheme for personal usage
+
+
 ## install
 
 ### vencord/betterdiscord (or any client that supports theme files)
