@@ -13,20 +13,20 @@ A CSS theme for Discord. The maintainer may be running it through desktop Vencor
   - `background-image.css`, `transparency-blur.css` — toggleable visual effects.
   - `dms-button.css`, `user-panel.css`, `window-controls.css` — small isolated components.
 - `themes/midnight.theme.css` — user-facing entry: variables + `@import` of the build.
-- `themes/flavors/` — preset palette variants, each a standalone `.theme.css` that `@import`s the same build (catppuccin macchiato/mocha, nord, rosé pine/moon, tokyo night, lilypichu, plus background and vencord variants).
-- `build/midnight.css` — generated from `src/*.css` by the build tooling and committed to git. **Don't hand-edit.** User `.theme.css` files `@import` the GitHub-Pages-hosted copy of this.
+- `src/ayu/colors.css` — fork-only ayu dark palette overlay, appended after the midnight build to produce `build/ayu.css`. Upstream `src/*.css` files stay untouched so pulling from `refact0r/midnight-discord` won't cause merge conflicts. (Upstream `themes/flavors/` variants were removed from this fork.)
+- `build/midnight.css` + `build/ayu.css` — generated from `src/*.css` (+ the ayu overlay) by the build tooling and committed to git. **Don't hand-edit.** User `.theme.css` files `@import` the GitHub-Pages-hosted copies of these.
 - `scripts/theme.config.js` — theme-specific paths, import, name, and explicit source order used by the shared dev tooling.
 - `scripts/build.js` — deterministic compiler (`npm run build`); `dev.js` and `serve.js` both use it.
 - `scripts/dev.js` — watcher for desktop Vencord (`npm run dev`).
 - `scripts/serve.js` + `scripts/inject.js` + `scripts/theme-dev.user.js` — browser dev flow. See `docs/BROWSER_DEV.md`.
-- `scripts/screenshot-flavors.js` — captures flavor screenshots into `assets/flavors/` (plus README thumbnails in `assets/flavors/thumbs/`) by cycling each flavor through the live Vesktop theme file (`npm run screenshot`, macOS only, requires `DEV_OUTPUT_PATH`).
+- `scripts/ayu.js` — fork-only helper that appends the ayu overlay to produce `build/ayu.css`.
 
 ## Hard rules
 
 - Edit `src/*.css`, never `build/midnight.css`.
 - When adding or removing a source file, update the ordered `sourceFiles` list in `scripts/theme.config.js`; builds fail on an unlisted or missing CSS file.
-- User-facing CSS variables (colors, sizes, toggles) are defined in `themes/midnight.theme.css`. The flavor files are standalone copies: keep their public variable interface in sync when adding or renaming variables, while preserving flavor-specific values. Structural rules live in `src/*.css`.
-- `scripts/build.js`, `dev.js`, `serve.js`, `inject.js`, `screenshot-flavors.js`, `theme-dev.user.js`, and `docs/BROWSER_DEV.md` are intentionally identical to System24's copies. Keep theme-specific behavior in `scripts/theme.config.js` and theme ownership guidance in `AGENTS.md`.
+- User-facing CSS variables (colors, sizes, toggles) are defined in `themes/midnight.theme.css`. The fork's ayu palette lives in `src/ayu/colors.css` and only redefines palette variables — structural rules live in `src/*.css`.
+- `scripts/build.js`, `dev.js`, `serve.js`, `inject.js`, `theme-dev.user.js`, and `docs/BROWSER_DEV.md` are intentionally identical to System24's copies. Keep theme-specific behavior in `scripts/theme.config.js` and theme ownership guidance in `AGENTS.md`.
 - Don't reach for `!important` to fight specificity — tighten the selector first.
 
 ## Experimental agentic development
