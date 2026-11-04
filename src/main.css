@@ -95,11 +95,10 @@ body {
     padding-top: var(--custom-guild-list-padding) !important;
     padding-bottom: var(--custom-guild-list-padding);
 }
-.folderGroup__48112 {
-    width: 100%;
-}
+/* full scroller width (overlapping the scrollbar gutter) so items stay centered, like discord does */
+.folderGroup__48112,
 .listItem__650eb {
-    width: 100%;
+    width: calc(var(--guildbar-avatar-size) + var(--custom-guild-list-padding) * 2);
 }
 
 .sidebarList__5e434 /* channel list */ {
@@ -108,8 +107,7 @@ body {
 .container__2637a /* channel list inner */ {
     padding-bottom: 0;
 }
-.clickable_f37cb1,
-    .container__2637a /* channel list inner */,
+.container__2637a /* channel list inner */,
     .header_f37cb1 /* server name */ {
     background: none;
 }
@@ -446,9 +444,6 @@ body {
 }
 
 /* improve server selected marker */
-.pill_e5445c.wrapper__58105 {
-    width: calc((var(--custom-guild-list-padding) - 4px) / 2 + 4px);
-}
 .item__58105 {
     width: 4px;
     border-radius: 4px;
